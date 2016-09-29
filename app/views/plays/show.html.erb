@@ -21,7 +21,10 @@
       body {
         background-color: white;
       }
-      
+      amp-img {
+        background-color: gray;
+        border: 1px solid black;
+      }
     </style>
 
 
@@ -29,10 +32,16 @@
     <script async src="https://cdn.ampproject.org/v0.js"></script>
   </head>
   <body>
-    <% @plays.each do |play| %>
-      <h2><%= link_to play.title, play_path(play)%></h2>
-    <% end %>
+    <h2><%= @play.title %></h2>
+    <h3><%= @play.director %></h3>
+    <p><%= simple_format(@play.description) %></p>
 
-    <%= link_to "Add Play", new_play_path %>
+    <%= link_to "Back", root_path %>
+    <%= link_to "Edit", edit_play_path(@play) %>
+    <%= link_to "Delete", play_path(@play), method: :delete, data: { confirm: "Are You Sure?" } %>
+
+
   </body>
 </html>
+
+
