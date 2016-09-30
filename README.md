@@ -6,3 +6,5 @@ This app has a basic functionality of feed/article/post along with a user model
 The feed/article/post has an added category sections
 
 This app has an aditional review functionality which is associated to a user and a feed/article/post
+
+The App has a star rating system using jQuery Raty
